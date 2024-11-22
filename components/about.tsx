@@ -66,5 +66,5 @@ function About() {
     </section>
   );
 }
-s
+
 export default About;
