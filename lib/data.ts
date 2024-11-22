@@ -13,8 +13,7 @@ import rentastayImg from "@/public/rentastay.png";
 import compilerImgDark from "@/public/compiler-dark.png";
 import compilerImg from "@/public/compiler.png";
 import huhImg from "@/public/huh.png";
-import { MdAssistant } from "react-icons/md";
-import { col } from "framer-motion/client";
+
 
 export const links = [
   {
