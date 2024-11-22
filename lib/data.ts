@@ -141,26 +141,26 @@ export const researchData = [
       ],
     date: "2024",
   },
-  {
-    title: "Extracting MITRE techniques from unstructured threat reports using Large Language Models",
-    description:
-      "In this work, we started with the automated collection of threat intelligence reports from leading cybersecurity platforms, including Threatpost, Comodo News, and Securelist, using advanced web scraping powered by Selenium. This data serves as the foundation for demonstrating how Large Language Models (LLMs) can significantly enhance the extraction and categorization of threat techniques, providing CTI practitioners with a more efficient and precise tool for threat analysis and response",
-      supervisor: {
-        name: "Dr. Md. Shohrab Hossain",
-        url: "https://mshohrabhossain.buet.ac.bd/",
-      },
-      collaborators: [
-        {
-          name: "Professor Ren-Hung Hwang",
-          url: "https://rhhwang.csie.io/English/index.html",
-        },
-        {
-          name: "Professor Ying Dar Lin",
-          url: "https://speed.cs.nycu.edu.tw/~ydlin/",
-        },
-      ],
-    date: "Ongoing",
-  },
+  // {
+  //   title: "Extracting MITRE techniques from unstructured threat reports using Large Language Models",
+  //   description:
+  //     "In this work, we started with the automated collection of threat intelligence reports from leading cybersecurity platforms, including Threatpost, Comodo News, and Securelist, using advanced web scraping powered by Selenium. This data serves as the foundation for demonstrating how Large Language Models (LLMs) can significantly enhance the extraction and categorization of threat techniques, providing CTI practitioners with a more efficient and precise tool for threat analysis and response",
+  //     supervisor: {
+  //       name: "Dr. Md. Shohrab Hossain",
+  //       url: "https://mshohrabhossain.buet.ac.bd/",
+  //     },
+  //     collaborators: [
+  //       {
+  //         name: "Professor Ren-Hung Hwang",
+  //         url: "https://rhhwang.csie.io/English/index.html",
+  //       },
+  //       {
+  //         name: "Professor Ying Dar Lin",
+  //         url: "https://speed.cs.nycu.edu.tw/~ydlin/",
+  //       },
+  //     ],
+  //   date: "Ongoing",
+  // },
 
   {
     title: "Forecasting of COVID-19 cases using a custom deep learning architecture incorporating vaccination",
