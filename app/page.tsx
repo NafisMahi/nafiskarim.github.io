@@ -13,7 +13,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Nafis Karim | Portfolio",
   description:
-    "Fardin Anam Aungon just finished his CS degree and started his teaching journey as a lecturer at BRAC University.",
+    "Nafis Karim just finished his CS degree and started his teaching journey as a lecturer at BRAC University.",
 };
 
 export default function Home() {

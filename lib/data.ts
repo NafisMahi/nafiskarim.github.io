@@ -59,25 +59,17 @@ export const experiencesData = [
     icon: React.createElement(LuGraduationCap),
     date: "2019 - 2024",
     others: {
-      CGPA: "3.81/4.00\n\n",
+      CGPA: "3.81/4.00 (3.97/4.00 in Final Year)\n\n",
       "Relevant Courseworks": [
         "Computer Security, ",
         "Machine Learning, ",
-        "Bioinformatics Algorithms, ",
-        "Simulation and Modeling, ",
-        "Computer Graphics, ",
         "Artificial Intelligence, ",
         "Operating Systems, ",
         "Computer Networks, ",
-        "Data Structures and Algorithms, ",
-        "Database Systems, ",
+
         "Software Engineering, ",
-        "Information System Design, ",
         "Numerical Methods, ",
-        "Discrete Mathematics, ",
-        "Object Oriented Programming, ",
-        "Linear Algebra, ",
-        "Probability and Statistics",
+        "Discrete Mathematics ",
       ],
     },
   },
@@ -89,6 +81,7 @@ export const experiencesData = [
     date: "2016 - 2018",
     others: {
       GPA: "5.00/5.00",
+      Recognition: "Talentpool Board Scholarship(33rd in Dhaka Division)",
     },
   },
   {
@@ -99,6 +92,7 @@ export const experiencesData = [
     date: "2006 - 2016",
     others: {
       GPA: "5.00/5.00",
+      Recognition: "Talentpool Board Scholarship(12th in Dhaka Division)",
     },
   },
 ] as const;
@@ -110,6 +104,7 @@ export const workExperienceData = [
     location: "Dhaka, Bangladesh",
     date: "July 2024 - Present",
     courses: [
+      "Operating Systems (CSE 321)",
       "Programming Language 1 (CSE 110)",
       "Object Oriented Programming (CSE 111)",
       "Data Structures Lab (CSE 220)",
@@ -139,7 +134,8 @@ export const researchData = [
           url: "https://speed.cs.nycu.edu.tw/~ydlin/",
         },
       ],
-    date: "2024",
+    date: "June 2023 - December 2024",
+    status: "Under review at ACM Transactions on Privacy and Security",
   },
   // {
   //   title: "Extracting MITRE techniques from unstructured threat reports using Large Language Models",
@@ -176,7 +172,7 @@ export const researchData = [
       supervisor: null,
       collaborators: [],
       
-    date: "Decemeber 2023",
+    date: "July 2023 - Decemeber 2023",
   },
 
   {
@@ -198,6 +194,8 @@ export const researchData = [
        url: "https://cse.buet.ac.bd/faculty/faculty_detail/razi"  // Replace with actual URL if available
      },
    collaborators: [],
+   date: "March 2021 - December 2023",  
+   status: "Under review",
    "links": [
      {
        "type": "code",
@@ -208,11 +206,8 @@ export const researchData = [
        "url": "https://www.researchgate.net/publication/357335958_Is_It_Really_Dead_-Digging_into_Dead_Brains_through_Analyzing_Its_Behavior_in_Response_to_Inducing_External_Impulses"  // Replace with actual URL if available
      }
    ]
+   
   },
-
-
-  
-
 
  
 ] as const;

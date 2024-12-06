@@ -9,7 +9,7 @@ type ResearchProps = {
   collaborators: ReadonlyArray<{ name: string; url: string }>;
   supervisor: Readonly<{ name: string; url: string }> | null; // Optional supervisor
   awards?: ReadonlyArray<{ title: string; event: string; year: number; status?: string }>;
-
+  status?: string;
   codeUrl?: string;
   posterUrl?: string;
 };
@@ -25,6 +25,7 @@ function ResearchItem({
   collaborators,
   supervisor,
   awards,
+  status,
   codeUrl,
   posterUrl,
 }: ResearchProps) {
@@ -78,6 +79,13 @@ function ResearchItem({
             ))}
           </div>
         )}
+
+        {status && (
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+          <strong>Status:</strong> {status}
+        </p>
+        )}
+
 
         {/* Awards Section */}
         {awards && awards.length > 0 && (
