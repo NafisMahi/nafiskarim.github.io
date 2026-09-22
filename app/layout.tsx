@@ -1,52 +1,60 @@
-"use client";
-
-import Header from "@/components/header";
+import type { Metadata } from "next";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import ActiveSectionContextProvider from "@/context/activeSectionContext";
+import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
+import ActiveSectionContextProvider from "@/context/activeSectionContext";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useTheme } from "@/lib/hooks";
+import { siteConfig } from "@/lib/data";
 
-const inter = Inter({
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const serif = Source_Serif_4({
   subsets: ["latin"],
+  variable: "--font-serif",
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
 });
+
+export const metadata: Metadata = {
+  title: `${siteConfig.name} | ${siteConfig.position}, UIC`,
+  description: `${siteConfig.name} is a PhD student in Computer Science at the University of Illinois Chicago working on web security and the security of AI agents.`,
+};
+
+// Applies the saved theme before first paint so dark mode does not flash.
+const themeInitScript = `
+(function () {
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+    }
+  } catch (e) {}
+})();
+`;
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const { scrollY } = useScroll();
-  // const y = useTransform(scrollY, (value) => (value < 4000 ? value : 4000));
-  const scale = useTransform(scrollY, (value) =>
-    1 - value / 1000 < 0.75 ? 0.75 : 1 - value / 1000
-  );
-
   return (
-    <html lang='en' className='!scroll-smooth'>
-      <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-[#0d1117] dark:text-gray-50 dark:text-opacity-90`}
-      >
-        <motion.div
-          style={{ scale: scale }}
-          className='fixed bg-[#fbe2e3] top-[10rem] -z-10 right-[11rem] size-[25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#703839]'
-        ></motion.div>
-        <motion.div
-          style={{ scale: scale }}
-          className='bg-[#dbd7fb] fixed top-[5rem] -z-10 left-[-35rem] h-[25rem] w-[25rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#1F2544]'
-        ></motion.div>
-
+    <html
+      lang="en"
+      className={`${inter.variable} ${serif.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="font-sans bg-paper text-ink min-h-screen flex flex-col">
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
             {children}
             <Footer />
-
-            <Toaster position='top-right' />
+            <Toaster position="top-right" />
             <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>

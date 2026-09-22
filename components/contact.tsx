@@ -1,75 +1,71 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
-import { useSectionInView } from "@/lib/hooks";
-import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
+import SectionHeading from "./section-heading";
+import Section from "./section";
+import SubmitBtn from "./submit-btn";
 import sendEmail from "@/actions/sendEmail";
 import { socialsData } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
+
+const fieldClass =
+  "w-full rounded-md border border-rule bg-card px-3 py-2 text-[0.95rem] text-ink placeholder:text-muted/70 outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition";
 
 export default function Contact() {
-  const { ref } = useSectionInView("Contact");
+  const { ref } = useSectionInView("Contact", 0.5);
 
   return (
-    <motion.section
-      id='contact'
-      ref={ref}
-      className='mb-20 sm:mb-28 w-[min(100%,38rem)] text-center'
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
-    >
-      <SectionHeading>Contact me</SectionHeading>
-
-      <p className='text-gray-700 -mt-6 dark:text-white/80'>
-        Please contact me directly at{" "}
-        <a className='underline' href={`mailto:${socialsData.email.address}`}>
+    <Section id="contact" ref={ref} className="mb-8">
+      <SectionHeading>Contact</SectionHeading>
+      <p className="text-[1.02rem] leading-relaxed">
+        The quickest way to reach me is by email at{" "}
+        <a className="link" href={`mailto:${socialsData.email.address}`}>
           {socialsData.email.address}
-        </a>{" "}
-        or through this form.
+        </a>
+        . You can also use the form below.
       </p>
 
       <form
-        className='mt-10 flex flex-col dark:text-black'
+        className="mt-6 flex flex-col gap-3 max-w-xl"
         action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
+          const { error } = await sendEmail(formData);
 
           if (error) {
             toast.error(error);
             return;
           }
 
-          toast.success("Email sent successfully!");
+          toast.success("Message sent. Thank you!");
         }}
       >
+        <label className="sr-only" htmlFor="senderEmail">
+          Your email
+        </label>
         <input
-          className='h-10 px-4 rounded-lg borderBlack dark:bg-white/5 dark:focus:bg-white/10 dark:text-white transition-all dark:outline-white'
-          name='senderEmail'
-          type='email'
+          id="senderEmail"
+          className={fieldClass}
+          name="senderEmail"
+          type="email"
           required
           maxLength={500}
-          placeholder='Your email'
+          placeholder="Your email"
         />
+        <label className="sr-only" htmlFor="message">
+          Your message
+        </label>
         <textarea
-          className='h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white/5 dark:focus:bg-white/10 dark:text-white transition-all dark:outline-white'
-          name='message'
-          placeholder='Your message'
+          id="message"
+          className={`${fieldClass} h-44 resize-y`}
+          name="message"
+          placeholder="Your message"
           required
           maxLength={5000}
         />
-        <SubmitBtn />
+        <div>
+          <SubmitBtn />
+        </div>
       </form>
-    </motion.section>
+    </Section>
   );
 }

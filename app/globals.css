@@ -2,14 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  --line-color: #e5e7eb;
+/* Colour tokens as RGB triplets so Tailwind opacity modifiers work. */
+:root {
+  --paper: 251 250 247;
+  --card: 255 255 255;
+  --ink: 27 27 27;
+  --muted: 95 92 85;
+  --rule: 227 223 214;
+  --accent: 29 78 137;
+  --accent-soft: 233 238 246;
 }
 
 html.dark {
-  --line-color: rgba(255, 255, 255, 0.2);
+  --paper: 15 17 21;
+  --card: 22 25 32;
+  --ink: 232 230 225;
+  --muted: 163 160 151;
+  --rule: 42 45 53;
+  --accent: 138 180 248;
+  --accent-soft: 27 38 54;
 }
 
-.borderBlack {
-  @apply border border-black/10;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--paper));
+  color: rgb(var(--ink));
+  font-feature-settings: "kern", "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgb(var(--accent-soft));
+}
+
+.link {
+  @apply text-accent underline decoration-accent/40 underline-offset-[3px] transition hover:decoration-accent;
 }

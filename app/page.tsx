@@ -1,32 +1,24 @@
-import About from "@/components/about";
-import Contact from "@/components/contact";
-import Experience from "@/components/experience";
 import Intro from "@/components/intro";
+import About from "@/components/about";
+import News from "@/components/news";
+import Publications from "@/components/publications";
+import Research from "@/components/research";
+import Teaching from "@/components/teaching";
 import Projects from "@/components/projects";
-import Research from "@/components/researches";
-import SectionDivider from "@/components/section-devider";
-import Skills from "@/components/skills";
-import WorkExperience from "@/components/work";
-
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Nafis Karim | Portfolio",
-  description:
-    "Nafis Karim just finished his CS degree and started his teaching journey as a lecturer at BRAC University.",
-};
+import Education from "@/components/education";
+import Contact from "@/components/contact";
 
 export default function Home() {
   return (
-    <main className='flex flex-col items-center px-4'>
+    <main className="flex-1 w-full max-w-3xl mx-auto px-5 sm:px-6 pt-10 sm:pt-16 pb-8">
       <Intro />
-      <SectionDivider />
       <About />
+      <News />
+      <Publications />
       <Research />
+      <Teaching />
       <Projects />
-      <Skills />
-      <Experience />
-      <WorkExperience />
+      <Education />
       <Contact />
     </main>
   );

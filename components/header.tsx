@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
+import { links, siteConfig } from "@/lib/data";
 import { useActiveSectionContext } from "@/context/activeSectionContext";
 
 function Header() {
@@ -12,41 +11,30 @@ function Header() {
     useActiveSectionContext();
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-gradient-to-r from-gray-900 via-gray-800 to-black shadow-lg backdrop-blur-md">
-      {/* Container */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between h-16">
-        {/* Logo */}
-        <div className="text-white text-2xl font-bold tracking-wide">
-          <Link href="/">
-            <motion.span
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              Nafis's Portfolio
-            </motion.span>
-          </Link>
-        </div>
+    <header className="sticky top-0 z-40 w-full border-b border-rule bg-paper/85 backdrop-blur">
+      <div className="max-w-3xl mx-auto px-5 sm:px-6 flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-3">
+        <Link
+          href="#home"
+          className="font-serif text-lg font-semibold tracking-tight"
+          onClick={() => {
+            setActiveSection("About");
+            setTimeOfLastClick(Date.now());
+          }}
+        >
+          {siteConfig.name}
+        </Link>
 
-        {/* Navigation */}
-        <nav>
-          <ul className="flex items-center gap-8 text-gray-300 font-medium">
+        <nav aria-label="Sections">
+          <ul className="flex flex-wrap items-center gap-x-4 sm:gap-x-5 gap-y-0.5 text-sm">
             {links.map((link) => (
-              <motion.li
-                key={link.hash}
-                className="relative"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 * link.hash.length }}
-              >
+              <li key={link.hash}>
                 <Link
                   href={link.hash}
                   className={clsx(
-                    "transition-all duration-300 hover:text-indigo-400",
-                    {
-                      "text-indigo-400 font-semibold":
-                        activeSection === link.name,
-                    }
+                    "inline-block py-1 border-b-2 transition-colors",
+                    activeSection === link.name
+                      ? "border-accent text-ink"
+                      : "border-transparent text-muted hover:text-ink"
                   )}
                   onClick={() => {
                     setActiveSection(link.name);
@@ -55,19 +43,18 @@ function Header() {
                 >
                   {link.name}
                 </Link>
-                {activeSection === link.name && (
-                  <motion.div
-                    className="absolute -bottom-2 left-0 right-0 mx-auto h-1 w-8 bg-indigo-400 rounded-full"
-                    layoutId="underline"
-                    transition={{
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 30,
-                    }}
-                  ></motion.div>
-                )}
-              </motion.li>
+              </li>
             ))}
+            <li>
+              <a
+                href={siteConfig.cvPath}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block py-1 border-b-2 border-transparent text-muted hover:text-ink transition-colors"
+              >
+                CV
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
