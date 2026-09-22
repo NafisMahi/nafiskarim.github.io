@@ -28,7 +28,7 @@ function Intro() {
           src={profilePic}
           alt={siteConfig.name}
           priority
-          className="h-40 w-40 shrink-0 rounded-xl object-cover border border-rule shadow-sm"
+          className="h-56 w-[10.5rem] shrink-0 rounded-xl object-cover object-top border border-rule shadow-sm"
         />
         <div className="min-w-0">
           <h1 className="font-serif text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
