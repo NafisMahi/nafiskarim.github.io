@@ -12,13 +12,13 @@ async function sendEmail(formData: FormData) {
   const message = formData.get("message");
   const senderEmail = formData.get("senderEmail");
 
-  if (!validateString(message, 500)) {
+  if (!validateString(message, 5000)) {
     return {
       error: "Invalid message",
     };
   }
 
-  if (!validateString(senderEmail, 5000)) {
+  if (!validateString(senderEmail, 500)) {
     return {
       error: "Invalid sender email",
     };
