@@ -56,7 +56,8 @@ export default function Publications() {
                   </span>
                 )}
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
+              <p className="mt-3 text-[0.95rem] leading-relaxed">
+                <span className="font-semibold">Abstract.</span>{" "}
                 {pub.summary}
               </p>
               {(pub.links.length > 0 || pub.note) && (

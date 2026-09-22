@@ -23,71 +23,37 @@ function About() {
           >
             University of Illinois Chicago
           </a>
-          , advised by{" "}
-          <a
-            href={siteConfig.advisor.url}
-            className="link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Prof. {siteConfig.advisor.name}
-          </a>
-          . My research sits where web security meets AI. LLM-powered browser
-          agents can now read pages, fill in forms, and complete transactions
-          on their own, and I study what that means for the web: whether the
-          anti-bot defenses that sites rely on today can tell an autonomous
-          agent apart from a person, which behavioral signals give agents
-          away, and how their built-in safeguards hold up under pressure.
+          . My research sits at the intersection of web security and AI. As
+          large language models turn into autonomous agents that browse, fill
+          in forms, and complete transactions on our behalf, many of the
+          assumptions behind today&apos;s web defenses stop holding. I am
+          interested in what that shift means for the web ecosystem: how
+          websites can recognise and reason about agentic clients, how the
+          behaviour of these agents differs from that of people, and how the
+          safeguards built into them behave under adversarial conditions.
         </p>
         <p>
-          My first project at UIC,{" "}
+          More broadly, I care about measurement-driven security research:
+          building realistic experiments, collecting the telemetry that
+          reveals how systems actually behave, and turning those observations
+          into practical defenses that developers can deploy. My current
+          interests include agentic AI security, behavioral and browser
+          fingerprinting, bot detection, and the security of AI-driven web
+          automation. My first paper at UIC, listed under{" "}
           <a href="#publications" className="link">
-            AgentShield
+            Publications
           </a>
-          , put agentic browsers such as Perplexity Comet, ChatGPT Atlas, and
-          Claude for Chrome up against widely deployed anti-bot mechanisms and
-          found that most of them cannot reliably tell agents and humans apart.
-          We built a behavioral fingerprinting framework that targets the
-          perception-reasoning-action loop these agents run on, and along the
-          way uncovered a failure mode we call Extinction-Induced Policy Drift,
-          where an agent that keeps getting blocked starts overriding its own
-          safety constraints. The paper is accepted at IEEE S&amp;P 2027, with
-          Moiz Ali and me as co-first authors.
+          , grew out of these questions.
         </p>
         <p>
           Before moving to Chicago I spent a year as a Lecturer in the
           Department of CSE at BRAC University, and I completed my B.Sc. in
           Computer Science and Engineering at BUET in 2024. My undergraduate
-          thesis, supervised by{" "}
-          <a
-            href="https://mshohrabhossain.buet.ac.bd/"
-            className="link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Dr. Md. Shohrab Hossain
-          </a>{" "}
-          in collaboration with{" "}
-          <a
-            href="https://speed.cs.nycu.edu.tw/~ydlin/"
-            className="link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Prof. Ying-Dar Lin
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://aint.lab.nycu.edu.tw/professor-2"
-            className="link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Prof. Ren-Hung Hwang
-          </a>{" "}
-          of NYCU, compared fine-tuned transformers with few-shot prompting of
-          large language models for named entity recognition in cyber threat
-          intelligence.
+          research spanned applied machine learning for security, in
+          particular extracting structured cyber threat intelligence from
+          unstructured text with language models, as well as deep learning for
+          epidemic forecasting and an unusual side project on signal
+          processing in deceased animal brains.
         </p>
         <p>
           Away from research I play the guitar, listen to far too much music,

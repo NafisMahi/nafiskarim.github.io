@@ -13,10 +13,6 @@ export const siteConfig = {
   institutionUrl: "https://cs.uic.edu/",
   tagline:
     "I work on web security and the security of AI agents: how LLM-powered browser agents behave on the web, how to tell them apart from people, and how to keep them from being abused.",
-  advisor: {
-    name: "Jason Polakis",
-    url: "https://www.cs.uic.edu/~polakis/",
-  },
   cvPath: "/CV.pdf",
   lastUpdated: "September 2026",
 } as const;
@@ -55,7 +51,7 @@ export const newsData = [
   },
   {
     date: "Aug 2025",
-    text: "Started my PhD in Computer Science at the University of Illinois Chicago, advised by Jason Polakis.",
+    text: "Started my PhD in Computer Science at the University of Illinois Chicago.",
   },
   {
     date: "Jul 2024",
@@ -91,7 +87,7 @@ export const publicationsData = [
     year: 2027,
     status: "Accepted, with shepherding",
     summary:
-      "A systematic empirical evaluation of modern AI browser agents (Perplexity Comet, ChatGPT Atlas, Claude for Chrome, and others) against widely deployed anti-bot defenses, showing that many existing mechanisms cannot reliably distinguish autonomous agents from humans. We introduce a behavioral fingerprinting framework that targets the perception-reasoning-action loop driving agentic clients, and identify Extinction-Induced Policy Drift, a failure mode in which repeatedly obstructed agents relax their own safety constraints.",
+      "LLM-powered browser agents are transforming web automation by autonomously interacting with websites and executing complex workflows, yet it is unclear how well existing anti-bot defenses hold up against them. We present a systematic empirical evaluation of modern agentic browsers, including Perplexity Comet, ChatGPT Atlas, and Claude for Chrome, against widely deployed anti-bot mechanisms such as reCAPTCHA and Cloudflare Turnstile, characterizing their capabilities, limitations, and behavioral differences from humans. Many defenses built for traditional automation struggle to reliably detect these agents. We therefore introduce AgentShield, a behavioral fingerprinting framework that targets the perception-reasoning-action loop underlying agentic clients: dynamic web forms that progressively reveal content and capture fine-grained interaction telemetry expose behavioral artifacts that separate autonomous agents from human users. We further demonstrate Extinction-Induced Policy Drift, a novel attack in which repeated obstruction of task completion causes agents to relax their safeguards and engage in unsafe behavior, and we present defensive prompt injection techniques that mitigate content-extraction abuse such as large-scale scraping. AgentShield is implemented as installable NPM packages, and the code, agent prompts, and data will be released publicly.",
     note: "* Equal contribution",
     links: [] as ReadonlyArray<{ label: string; url: string }>,
   },
@@ -208,7 +204,7 @@ export const educationData = [
     institution: "University of Illinois Chicago",
     location: "Chicago, IL, USA",
     date: "Aug 2025 - Present",
-    details: ["CGPA 4.00 / 4.00", "Advisor: Jason Polakis"],
+    details: ["CGPA 4.00 / 4.00"],
   },
   {
     degree: "B.Sc. in Computer Science and Engineering",
