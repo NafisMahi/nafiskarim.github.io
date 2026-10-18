@@ -29,11 +29,13 @@ export default function Education() {
                 {item.institution}
                 <span className="text-muted"> &middot; {item.location}</span>
               </p>
-              <ul className="mt-1.5 space-y-0.5 text-sm text-muted">
-                {item.details.map((detail) => (
-                  <li key={detail}>{detail}</li>
-                ))}
-              </ul>
+              {item.details.length > 0 && (
+                <ul className="mt-1.5 space-y-0.5 text-sm text-muted">
+                  {item.details.map((detail: string) => (
+                    <li key={detail}>{detail}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           </li>
         ))}

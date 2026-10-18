@@ -205,7 +205,7 @@ export const educationData = [
     institution: "University of Illinois Chicago",
     location: "Chicago, IL, USA",
     date: "Aug 2025 - Present",
-    details: ["CGPA 4.00 / 4.00"],
+    details: [],
   },
   {
     degree: "B.Sc. in Computer Science and Engineering",
