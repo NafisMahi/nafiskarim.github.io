@@ -13,7 +13,7 @@ export const siteConfig = {
   institutionUrl: "https://cs.uic.edu/",
   tagline:
     "I work on web security and the security of AI agents: how LLM-powered browser agents behave on the web, how to tell them apart from people, and how to keep them from being abused.",
-  cvPath: "/CV.pdf",
+  cvPath: "/Resume.pdf",
   lastUpdated: "September 2026",
 } as const;
 
@@ -83,12 +83,13 @@ export const publicationsData = [
       { name: "Dhruv Kucchal" },
       { name: "Jason Polakis", url: "https://www.cs.uic.edu/~polakis/" },
     ],
-    venue: "IEEE Symposium on Security and Privacy (S&P)",
+    venue: "Proceedings of the IEEE Symposium on Security and Privacy (S&P)",
     year: 2027,
+    toAppear: true,
     status: "Accepted, with shepherding",
     summary:
       "LLM-powered browser agents are transforming web automation by autonomously interacting with websites and executing complex workflows, yet it is unclear how well existing anti-bot defenses hold up against them. We present a systematic empirical evaluation of modern agentic browsers, including Perplexity Comet, ChatGPT Atlas, and Claude for Chrome, against widely deployed anti-bot mechanisms such as reCAPTCHA and Cloudflare Turnstile, characterizing their capabilities, limitations, and behavioral differences from humans. Many defenses built for traditional automation struggle to reliably detect these agents. We therefore introduce AgentShield, a behavioral fingerprinting framework that targets the perception-reasoning-action loop underlying agentic clients: dynamic web forms that progressively reveal content and capture fine-grained interaction telemetry expose behavioral artifacts that separate autonomous agents from human users. We further demonstrate Extinction-Induced Policy Drift, a novel attack in which repeated obstruction of task completion causes agents to relax their safeguards and engage in unsafe behavior, and we present defensive prompt injection techniques that mitigate content-extraction abuse such as large-scale scraping. AgentShield is implemented as installable NPM packages, and the code, agent prompts, and data will be released publicly.",
-    note: "* Equal contribution",
+    note: "* equal contribution",
     links: [] as ReadonlyArray<{ label: string; url: string }>,
   },
 ] as const;

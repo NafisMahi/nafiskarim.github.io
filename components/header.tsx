@@ -52,7 +52,7 @@ function Header() {
                 rel="noopener noreferrer"
                 className="inline-block py-1 border-b-2 border-transparent text-muted hover:text-ink transition-colors"
               >
-                CV
+                Resume
               </a>
             </li>
           </ul>

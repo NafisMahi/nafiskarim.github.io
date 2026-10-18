@@ -47,8 +47,14 @@ export default function Publications() {
                     </React.Fragment>
                   );
                 })}
+                {pub.note && (
+                  <span className="ml-2 text-xs text-muted whitespace-nowrap">
+                    ({pub.note})
+                  </span>
+                )}
               </p>
               <p className="mt-1 text-[0.95rem]">
+                {"toAppear" in pub && pub.toAppear && <span>(To appear) In </span>}
                 <em className="font-serif">{pub.venue}</em>, {pub.year}
                 {pub.status && (
                   <span className="ml-2 inline-block align-middle rounded-full bg-accent-soft text-accent px-2.5 py-0.5 text-xs font-medium">
@@ -56,11 +62,11 @@ export default function Publications() {
                   </span>
                 )}
               </p>
-              <p className="mt-3 text-[0.95rem] leading-relaxed">
+              <p className="mt-1 text-[0.95rem] leading-relaxed">
                 <span className="font-semibold">Abstract.</span>{" "}
                 {pub.summary}
               </p>
-              {(pub.links.length > 0 || pub.note) && (
+              {pub.links.length > 0 && (
                 <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
                   {pub.links.map((link) => (
                     <a
@@ -73,7 +79,6 @@ export default function Publications() {
                       {link.label}
                     </a>
                   ))}
-                  {pub.note && <span className="text-muted text-xs">{pub.note}</span>}
                 </p>
               )}
             </div>

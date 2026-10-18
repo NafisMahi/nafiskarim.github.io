@@ -30,20 +30,17 @@ function About() {
           interested in what that shift means for the web ecosystem: how
           websites can recognise and reason about agentic clients, how the
           behaviour of these agents differs from that of people, and how the
-          safeguards built into them behave under adversarial conditions.
-        </p>
-        <p>
-          More broadly, I care about measurement-driven security research:
-          building realistic experiments, collecting the telemetry that
-          reveals how systems actually behave, and turning those observations
-          into practical defenses that developers can deploy. My current
-          interests include agentic AI security, behavioral and browser
-          fingerprinting, bot detection, and the security of AI-driven web
-          automation. My first paper at UIC, listed under{" "}
+          safeguards built into them behave under adversarial conditions. My
+          current interests include agentic AI security, behavioral and
+          browser fingerprinting, bot detection, and the security of AI-driven
+          web automation. These questions shaped my first paper at UIC,
+          AgentShield, which was accepted to the IEEE Symposium on Security
+          and Privacy (S&amp;P) in my first year of the PhD; you can find it
+          under{" "}
           <a href="#publications" className="link">
             Publications
           </a>
-          , grew out of these questions.
+          .
         </p>
         <p>
           Before moving to Chicago I spent a year as a Lecturer in the
