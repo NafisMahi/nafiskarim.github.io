@@ -38,7 +38,7 @@ export const researchInterests = [
 export const newsData = [
   {
     date: "Sep 2026",
-    text: "AgentShield, our study of AI browser agents against anti-bot defenses, is accepted (with shepherding) at IEEE S&P 2027.",
+    text: "AgentShield, our study of AI browser agents against anti-bot defenses, is accepted at IEEE S&P 2027.",
     href: "#publications",
   },
   {
@@ -86,7 +86,7 @@ export const publicationsData = [
     venue: "Proceedings of the IEEE Symposium on Security and Privacy (S&P)",
     year: 2027,
     toAppear: true,
-    status: "Accepted, with shepherding",
+    status: "Accepted",
     summary:
       "LLM-powered browser agents are transforming web automation by autonomously interacting with websites and executing complex workflows, yet it is unclear how well existing anti-bot defenses hold up against them. We present a systematic empirical evaluation of modern agentic browsers, including Perplexity Comet, ChatGPT Atlas, and Claude for Chrome, against widely deployed anti-bot mechanisms such as reCAPTCHA and Cloudflare Turnstile, characterizing their capabilities, limitations, and behavioral differences from humans. Many defenses built for traditional automation struggle to reliably detect these agents. We therefore introduce AgentShield, a behavioral fingerprinting framework that targets the perception-reasoning-action loop underlying agentic clients: dynamic web forms that progressively reveal content and capture fine-grained interaction telemetry expose behavioral artifacts that separate autonomous agents from human users. We further demonstrate Extinction-Induced Policy Drift, a novel attack in which repeated obstruction of task completion causes agents to relax their safeguards and engage in unsafe behavior, and we present defensive prompt injection techniques that mitigate content-extraction abuse such as large-scale scraping. AgentShield is implemented as installable NPM packages, and the code, agent prompts, and data will be released publicly.",
     note: "* equal contribution",
