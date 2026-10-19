@@ -217,26 +217,6 @@ export const educationData = [
       "Coursework: Computer Security, Machine Learning, Artificial Intelligence, Operating Systems, Computer Networks, Software Engineering, Discrete Mathematics",
     ],
   },
-  {
-    degree: "Higher Secondary School Certificate",
-    institution: "Notre Dame College",
-    location: "Dhaka, Bangladesh",
-    date: "2016 - 2018",
-    details: [
-      "GPA 5.00 / 5.00",
-      "Talentpool Board Scholarship (33rd in Dhaka Division)",
-    ],
-  },
-  {
-    degree: "Secondary School Certificate",
-    institution: "Ideal School and College",
-    location: "Dhaka, Bangladesh",
-    date: "2006 - 2016",
-    details: [
-      "GPA 5.00 / 5.00",
-      "Talentpool Board Scholarship (12th in Dhaka Division)",
-    ],
-  },
 ] as const;
 
 export const honorsData = [
